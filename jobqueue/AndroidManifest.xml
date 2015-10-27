@@ -3,6 +3,5 @@
           package="com.path.android.jobqueue"
           android:versionCode="2"
           android:versionName="1.1.2">
-    <application android:label="">
-    </application>
+    <application />
 </manifest>
