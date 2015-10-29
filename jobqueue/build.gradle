@@ -1,8 +1,7 @@
-import com.android.builder.core.BuilderConstants
-
 import java.util.regex.Pattern
+
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.10'
+    gradleVersion = '2.8'
 }
 
 apply plugin: 'maven'
@@ -48,7 +47,7 @@ println "version name:${manifestVersionName}"
 android.libraryVariants.all { variant ->
     def name = variant.buildType.name
     println "checking variant ${name}"
-    if (name.equals(BuilderConstants.DEBUG)) {
+    if (variant.buildType.isDebuggable()) {
         return; // Skip debug builds.
     }
     def suffix = name.capitalize()
